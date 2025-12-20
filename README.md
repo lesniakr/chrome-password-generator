@@ -6,26 +6,17 @@
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-blue)](https://developer.chrome.com/docs/extensions/mv3/intro/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Purpose
-
-A portfolio project demonstrating clean code architecture, security awareness, and modern Chrome Extension development practices. Built to showcase:
-
-- Modular JavaScript architecture
-- Cryptographically secure password generation
-- Chrome Extension Manifest V3 best practices
-- Professional Git workflow (GitFlow)
-
 ## Features
 
-- [ ] Configurable password length (8-128 characters)
-- [ ] Character type selection:
+- [x] Configurable password length (8-64 characters)
+- [x] Character type selection:
   - Lowercase letters (a-z)
   - Uppercase letters (A-Z)  
   - Digits (0-9)
   - Special symbols (!@#$%^&*...)
-- [ ] Cryptographically secure randomness (`crypto.getRandomValues`)
-- [ ] One-click copy to clipboard
-- [ ] Clean, responsive popup interface
+- [x] Cryptographically secure randomness (`crypto.getRandomValues`)
+- [x] One-click copy to clipboard
+- [x] Clean, responsive popup interface
 
 ## Tech Stack
 
@@ -35,6 +26,7 @@ A portfolio project demonstrating clean code architecture, security awareness, a
 | Chrome Extension API | Browser integration |
 | Manifest V3 | Extension configuration |
 | Web Crypto API | Secure random generation |
+| ESLint + Prettier | Code quality & formatting |
 
 ## Architecture
 
@@ -52,7 +44,7 @@ src/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/chrome-password-generator.git
+   git clone https://github.com/lesniakr/chrome-password-generator.git
    ```
 
 2. Open Chrome and navigate to `chrome://extensions/`
@@ -84,7 +76,7 @@ hotfix/*    → Production fixes
 
 ## Roadmap
 
-- [ ] **v1.0.0** - Core functionality
+- [x] **v1.0.0** - Core functionality
   - Password generation with options
   - Copy to clipboard
   - Basic UI
@@ -99,7 +91,16 @@ hotfix/*    → Production fixes
 
 ```bash
 # Clone repository
-git clone https://github.com/your-username/chrome-password-generator.git
+git clone https://github.com/lesniakr/chrome-password-generator.git
+
+# Install dependencies
+npm install
+
+# Run linter
+npm run lint
+
+# Format code
+npm run format
 
 # Switch to develop branch
 git checkout develop

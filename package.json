@@ -1,0 +1,35 @@
+{
+  "name": "chrome-password-generator",
+  "version": "1.0.0",
+  "description": "Secure password generator Chrome extension built with Manifest V3",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint src/**/*.js --fix",
+    "format": "prettier --write src/**/*.{js,css,html,json}",
+    "format:check": "prettier --check src/**/*.{js,css,html,json}"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lesniakr/chrome-password-generator.git"
+  },
+  "keywords": [
+    "chrome-extension",
+    "password-generator",
+    "manifest-v3",
+    "security"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lesniakr/chrome-password-generator/issues"
+  },
+  "homepage": "https://github.com/lesniakr/chrome-password-generator#readme",
+  "devDependencies": {
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.5.0",
+    "prettier": "^3.7.4"
+  }
+}
