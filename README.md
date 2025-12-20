@@ -1,4 +1,4 @@
-# 🔐 Chrome Password Generator
+# Chrome Password Generator
 
 > Secure password generator Chrome extension built with Manifest V3
 
@@ -6,7 +6,7 @@
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-blue)](https://developer.chrome.com/docs/extensions/mv3/intro/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## 🎯 Purpose
+## Purpose
 
 A portfolio project demonstrating clean code architecture, security awareness, and modern Chrome Extension development practices. Built to showcase:
 
@@ -15,7 +15,7 @@ A portfolio project demonstrating clean code architecture, security awareness, a
 - Chrome Extension Manifest V3 best practices
 - Professional Git workflow (GitFlow)
 
-## ✨ Features
+## Features
 
 - [ ] Configurable password length (8-128 characters)
 - [ ] Character type selection:
@@ -27,7 +27,7 @@ A portfolio project demonstrating clean code architecture, security awareness, a
 - [ ] One-click copy to clipboard
 - [ ] Clean, responsive popup interface
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Technology | Purpose |
 |------------|---------|
@@ -36,7 +36,7 @@ A portfolio project demonstrating clean code architecture, security awareness, a
 | Manifest V3 | Extension configuration |
 | Web Crypto API | Secure random generation |
 
-## 📁 Architecture
+## Architecture
 
 ```
 src/
@@ -46,7 +46,7 @@ src/
 └── manifest.json   # Extension configuration
 ```
 
-## 🚀 Installation
+## Installation
 
 ### Development Mode
 
@@ -63,7 +63,7 @@ src/
 
 5. The extension icon will appear in your toolbar
 
-## 🔄 GitFlow
+## GitFlow
 
 This project follows GitFlow branching model:
 
@@ -82,7 +82,7 @@ hotfix/*    → Production fixes
 - `release/1.0.0`
 - `hotfix/clipboard-fix`
 
-## 📋 Roadmap
+## Roadmap
 
 - [ ] **v1.0.0** - Core functionality
   - Password generation with options
@@ -95,7 +95,7 @@ hotfix/*    → Production fixes
   - Save preferences (local storage)
   - Password history (session only)
 
-## 🧑‍💻 Development
+## Development
 
 ```bash
 # Clone repository
@@ -120,10 +120,6 @@ chore: configure ESLint rules
 refactor: extract character sets to constants
 ```
 
-## 📄 License
+## License
 
 MIT License - see [LICENSE](LICENSE) for details.
-
----
-
-Built with ☕ as a portfolio project.
