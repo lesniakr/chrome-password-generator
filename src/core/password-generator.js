@@ -97,4 +97,49 @@ function generatePassword(options = {}) {
   return password;
 }
 
-export { generatePassword, CHAR_SETS, DEFAULT_OPTIONS };
+/**
+ * Calculates password strength based on length and character diversity.
+ *
+ * @param {string} password - Password to evaluate
+ * @returns {Object} Strength assessment { score: 0-4, label: string, percent: number }
+ */
+function calculateStrength(password) {
+  if (!password) {
+    return { score: 0, label: 'None', percent: 0 };
+  }
+
+  let score = 0;
+
+  // Length scoring
+  if (password.length >= 8) score++;
+  if (password.length >= 12) score++;
+  if (password.length >= 16) score++;
+
+  // Character diversity scoring
+  const hasLowercase = /[a-z]/.test(password);
+  const hasUppercase = /[A-Z]/.test(password);
+  const hasDigits = /[0-9]/.test(password);
+  const hasSymbols = /[^a-zA-Z0-9]/.test(password);
+
+  const diversity = [hasLowercase, hasUppercase, hasDigits, hasSymbols].filter(
+    Boolean
+  ).length;
+
+  if (diversity >= 2) score++;
+  if (diversity >= 3) score++;
+  if (diversity === 4) score++;
+
+  // Normalize score to 0-4 range
+  const normalizedScore = Math.min(4, Math.floor(score / 1.5));
+
+  const labels = ['Weak', 'Fair', 'Good', 'Strong', 'Excellent'];
+  const percents = [20, 40, 60, 80, 100];
+
+  return {
+    score: normalizedScore,
+    label: labels[normalizedScore],
+    percent: percents[normalizedScore],
+  };
+}
+
+export { generatePassword, calculateStrength, CHAR_SETS, DEFAULT_OPTIONS };

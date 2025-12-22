@@ -4,7 +4,10 @@
  * Handles user interactions and connects UI with core modules.
  */
 
-import { generatePassword } from '../core/password-generator.js';
+import {
+  generatePassword,
+  calculateStrength,
+} from '../core/password-generator.js';
 import { copyToClipboard } from '../utils/clipboard.js';
 
 // DOM Elements
@@ -19,6 +22,8 @@ const elements = {
   digits: document.getElementById('digits'),
   symbols: document.getElementById('symbols'),
   message: document.getElementById('message'),
+  strengthFill: document.getElementById('strength-fill'),
+  strengthLabel: document.getElementById('strength-label'),
 };
 
 /**
@@ -52,6 +57,21 @@ function showMessage(text, type) {
 }
 
 /**
+ * Updates the password strength indicator.
+ *
+ * @param {string} password - Password to evaluate
+ */
+function updateStrengthIndicator(password) {
+  const strength = calculateStrength(password);
+  const levelClass = strength.label.toLowerCase();
+
+  elements.strengthFill.style.width = `${strength.percent}%`;
+  elements.strengthFill.className = `strength-fill ${levelClass}`;
+  elements.strengthLabel.textContent = strength.label;
+  elements.strengthLabel.className = `strength-label ${levelClass}`;
+}
+
+/**
  * Validates that at least one character type is selected.
  *
  * @returns {boolean} True if valid
@@ -74,6 +94,14 @@ function handleGenerate() {
     const options = getOptions();
     const password = generatePassword(options);
     elements.passwordOutput.value = password;
+
+    // Update strength indicator
+    updateStrengthIndicator(password);
+
+    // Trigger animation
+    elements.passwordOutput.classList.remove('generated');
+    void elements.passwordOutput.offsetWidth; // Force reflow
+    elements.passwordOutput.classList.add('generated');
   } catch (error) {
     showMessage(error.message, 'error');
   }
@@ -94,6 +122,12 @@ async function handleCopy() {
 
   if (success) {
     showMessage('Copied to clipboard!', 'success');
+
+    // Animate copy button
+    elements.copyBtn.classList.add('copied');
+    setTimeout(() => {
+      elements.copyBtn.classList.remove('copied');
+    }, 1000);
   } else {
     showMessage('Failed to copy', 'error');
   }
