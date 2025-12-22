@@ -100,23 +100,13 @@ hotfix/*    → Production fixes
 ## Development
 
 ```bash
-# Clone repository
+# Clone and install
 git clone https://github.com/lesniakr/chrome-password-generator.git
-
-# Install dependencies
 npm install
 
-# Run linter
+# Lint and format
 npm run lint
-
-# Format code
 npm run format
-
-# Switch to develop branch
-git checkout develop
-
-# Create feature branch
-git checkout -b feature/your-feature-name
 ```
 
 ### Commit Convention
