@@ -17,6 +17,8 @@
 - [x] Cryptographically secure randomness (`crypto.getRandomValues`)
 - [x] One-click copy to clipboard
 - [x] Clean, responsive popup interface
+- [x] Password strength indicator
+- [x] Animated UI feedback
 
 ## Tech Stack
 
@@ -80,7 +82,7 @@ hotfix/*    → Production fixes
   - Password generation with options
   - Copy to clipboard
   - Basic UI
-- [ ] **v1.1.0** - Enhanced UX
+- [x] **v1.1.0** - Enhanced UX
   - Password strength indicator
   - Animated feedback
 - [ ] **v1.2.0** - Persistence
