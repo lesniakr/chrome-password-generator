@@ -88,6 +88,14 @@ hotfix/*    → Production fixes
 - [ ] **v1.2.0** - Persistence
   - Save preferences (local storage)
   - Password history (session only)
+- [ ] **v1.3.0** - UI Improvements
+  - Compact layout redesign
+  - Inline copy icon in password field
+  - Click-to-copy on password input
+- [ ] **v1.4.0** - Advanced Features
+  - Advanced settings panel
+  - Generate multiple passwords at once
+  - Custom character sets
 
 ## Development
 
