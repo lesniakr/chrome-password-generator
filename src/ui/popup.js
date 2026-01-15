@@ -13,7 +13,7 @@ import { copyToClipboard } from '../utils/clipboard.js';
 // DOM Elements
 const elements = {
   passwordOutput: document.getElementById('password-output'),
-  copyBtn: document.getElementById('copy-btn'),
+  regenerateBtn: document.getElementById('regenerate-btn'),
   generateBtn: document.getElementById('generate-btn'),
   lengthSlider: document.getElementById('length'),
   lengthValue: document.getElementById('length-value'),
@@ -123,11 +123,8 @@ async function handleCopy() {
   if (success) {
     showMessage('Copied to clipboard!', 'success');
 
-    // Animate copy button and password input
-    elements.copyBtn.classList.add('copied');
     elements.passwordOutput.classList.add('copied');
     setTimeout(() => {
-      elements.copyBtn.classList.remove('copied');
       elements.passwordOutput.classList.remove('copied');
     }, 1000);
   } else {
@@ -144,7 +141,7 @@ function handleLengthChange() {
 
 // Event listeners
 elements.generateBtn.addEventListener('click', handleGenerate);
-elements.copyBtn.addEventListener('click', handleCopy);
+elements.regenerateBtn.addEventListener('click', handleGenerate);
 elements.passwordOutput.addEventListener('click', handleCopy);
 elements.lengthSlider.addEventListener('input', handleLengthChange);
 

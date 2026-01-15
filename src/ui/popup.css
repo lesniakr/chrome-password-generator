@@ -178,9 +178,12 @@ body {
   transform: scale(0.95);
 }
 
-.btn-icon.copied {
-  border-color: #22c55e;
-  color: #22c55e;
+.btn-icon svg {
+  transition: transform 0.3s ease;
+}
+
+.btn-icon:active svg {
+  transform: rotate(180deg);
 }
 
 /* Password output animation */
