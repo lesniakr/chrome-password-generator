@@ -19,7 +19,7 @@ const DEFAULT_OPTIONS = {
   lowercase: true,
   uppercase: true,
   digits: true,
-  symbols: false,
+  symbols: true,
 };
 
 /**

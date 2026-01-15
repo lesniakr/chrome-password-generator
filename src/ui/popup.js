@@ -13,8 +13,7 @@ import { copyToClipboard } from '../utils/clipboard.js';
 // DOM Elements
 const elements = {
   passwordOutput: document.getElementById('password-output'),
-  copyBtn: document.getElementById('copy-btn'),
-  generateBtn: document.getElementById('generate-btn'),
+  regenerateBtn: document.getElementById('regenerate-btn'),
   lengthSlider: document.getElementById('length'),
   lengthValue: document.getElementById('length-value'),
   lowercase: document.getElementById('lowercase'),
@@ -123,10 +122,9 @@ async function handleCopy() {
   if (success) {
     showMessage('Copied to clipboard!', 'success');
 
-    // Animate copy button
-    elements.copyBtn.classList.add('copied');
+    elements.passwordOutput.classList.add('copied');
     setTimeout(() => {
-      elements.copyBtn.classList.remove('copied');
+      elements.passwordOutput.classList.remove('copied');
     }, 1000);
   } else {
     showMessage('Failed to copy', 'error');
@@ -134,16 +132,28 @@ async function handleCopy() {
 }
 
 /**
- * Updates the length display value.
+ * Updates the length display value and regenerates password.
  */
 function handleLengthChange() {
   elements.lengthValue.textContent = elements.lengthSlider.value;
+  handleGenerate();
+}
+
+/**
+ * Handles checkbox change and regenerates password.
+ */
+function handleOptionChange() {
+  handleGenerate();
 }
 
 // Event listeners
-elements.generateBtn.addEventListener('click', handleGenerate);
-elements.copyBtn.addEventListener('click', handleCopy);
+elements.regenerateBtn.addEventListener('click', handleGenerate);
+elements.passwordOutput.addEventListener('click', handleCopy);
 elements.lengthSlider.addEventListener('input', handleLengthChange);
+elements.lowercase.addEventListener('change', handleOptionChange);
+elements.uppercase.addEventListener('change', handleOptionChange);
+elements.digits.addEventListener('change', handleOptionChange);
+elements.symbols.addEventListener('change', handleOptionChange);
 
 // Generate initial password on load
 handleGenerate();
