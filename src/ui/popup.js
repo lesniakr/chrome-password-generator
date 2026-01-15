@@ -123,10 +123,12 @@ async function handleCopy() {
   if (success) {
     showMessage('Copied to clipboard!', 'success');
 
-    // Animate copy button
+    // Animate copy button and password input
     elements.copyBtn.classList.add('copied');
+    elements.passwordOutput.classList.add('copied');
     setTimeout(() => {
       elements.copyBtn.classList.remove('copied');
+      elements.passwordOutput.classList.remove('copied');
     }, 1000);
   } else {
     showMessage('Failed to copy', 'error');
@@ -143,6 +145,7 @@ function handleLengthChange() {
 // Event listeners
 elements.generateBtn.addEventListener('click', handleGenerate);
 elements.copyBtn.addEventListener('click', handleCopy);
+elements.passwordOutput.addEventListener('click', handleCopy);
 elements.lengthSlider.addEventListener('input', handleLengthChange);
 
 // Generate initial password on load
