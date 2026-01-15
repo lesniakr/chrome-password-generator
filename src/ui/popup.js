@@ -14,7 +14,6 @@ import { copyToClipboard } from '../utils/clipboard.js';
 const elements = {
   passwordOutput: document.getElementById('password-output'),
   regenerateBtn: document.getElementById('regenerate-btn'),
-  generateBtn: document.getElementById('generate-btn'),
   lengthSlider: document.getElementById('length'),
   lengthValue: document.getElementById('length-value'),
   lowercase: document.getElementById('lowercase'),
@@ -133,17 +132,28 @@ async function handleCopy() {
 }
 
 /**
- * Updates the length display value.
+ * Updates the length display value and regenerates password.
  */
 function handleLengthChange() {
   elements.lengthValue.textContent = elements.lengthSlider.value;
+  handleGenerate();
+}
+
+/**
+ * Handles checkbox change and regenerates password.
+ */
+function handleOptionChange() {
+  handleGenerate();
 }
 
 // Event listeners
-elements.generateBtn.addEventListener('click', handleGenerate);
 elements.regenerateBtn.addEventListener('click', handleGenerate);
 elements.passwordOutput.addEventListener('click', handleCopy);
 elements.lengthSlider.addEventListener('input', handleLengthChange);
+elements.lowercase.addEventListener('change', handleOptionChange);
+elements.uppercase.addEventListener('change', handleOptionChange);
+elements.digits.addEventListener('change', handleOptionChange);
+elements.symbols.addEventListener('change', handleOptionChange);
 
 // Generate initial password on load
 handleGenerate();
