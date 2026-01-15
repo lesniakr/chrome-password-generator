@@ -85,13 +85,15 @@ hotfix/*    → Production fixes
 - [x] **v1.1.0** - Enhanced UX
   - Password strength indicator
   - Animated feedback
-- [ ] **v1.2.0** - Persistence
+- [ ] **v1.2.0** - UI Improvements
+  - Click-to-copy on password input
+  - Inline copy icon in password field
+  - Auto-generate on options change
+  - Regenerate button
+  - Symbols enabled by default
+- [ ] **v1.3.0** - Persistence
   - Save preferences (local storage)
   - Password history (session only)
-- [ ] **v1.3.0** - UI Improvements
-  - Compact layout redesign
-  - Inline copy icon in password field
-  - Click-to-copy on password input
 - [ ] **v1.4.0** - Advanced Features
   - Advanced settings panel
   - Generate multiple passwords at once

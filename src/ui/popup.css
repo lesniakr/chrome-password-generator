@@ -36,9 +36,14 @@ body {
   margin-bottom: 16px;
 }
 
-.password-output {
+.password-input-wrapper {
+  position: relative;
   flex: 1;
-  padding: 12px;
+}
+
+.password-output {
+  width: 100%;
+  padding: 12px 40px 12px 12px;
   font-family: 'SF Mono', 'Consolas', monospace;
   font-size: 14px;
   border: 2px solid #e0e0e0;
@@ -46,11 +51,34 @@ body {
   background: #f8f9fa;
   color: #1a1a2e;
   outline: none;
+  cursor: pointer;
   transition: border-color 0.2s;
+}
+
+.password-output:hover {
+  border-color: #4f46e5;
 }
 
 .password-output:focus {
   border-color: #4f46e5;
+}
+
+.copy-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  pointer-events: none;
+  transition: color 0.2s;
+}
+
+.password-input-wrapper:hover .copy-icon {
+  color: #4f46e5;
+}
+
+.password-output.copied + .copy-icon {
+  color: #22c55e;
 }
 
 /* Strength indicator */
@@ -150,9 +178,12 @@ body {
   transform: scale(0.95);
 }
 
-.btn-icon.copied {
-  border-color: #22c55e;
-  color: #22c55e;
+.btn-icon svg {
+  transition: transform 0.3s ease;
+}
+
+.btn-icon:active svg {
+  transform: rotate(180deg);
 }
 
 /* Password output animation */
