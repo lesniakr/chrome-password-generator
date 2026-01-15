@@ -10,7 +10,7 @@ const CHAR_SETS = {
   lowercase: 'abcdefghijklmnopqrstuvwxyz',
   uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
   digits: '0123456789',
-  symbols: '!@#$%^&*()_+-=[]{}|;:,.<>?',
+  symbols: '!@#$%^&*-_+=?',
 };
 
 // Default password generation options
