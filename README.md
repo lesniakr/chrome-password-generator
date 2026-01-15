@@ -85,7 +85,7 @@ hotfix/*    → Production fixes
 - [x] **v1.1.0** - Enhanced UX
   - Password strength indicator
   - Animated feedback
-- [ ] **v1.2.0** - UI Improvements
+- [x] **v1.2.0** - UI Improvements
   - Click-to-copy on password input
   - Inline copy icon in password field
   - Auto-generate on options change
